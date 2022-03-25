@@ -36,8 +36,13 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-	return ""
-
+    if len(input1) > len(input2):
+        return input1 
+    elif len(input1) < len(input2):
+        return input2
+    elif len(input1) == len(input2):
+        return input1 + ' ' + input2 
+  
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 2>
@@ -59,8 +64,18 @@ def one(input1, input2):
 
 	# No hints for this question
 
-def two(arg1):
-	return "null"
+def two(x):
+    fizz = x%3 == 0
+    buzz = x%5 == 0
+    
+    if fizz and buzz:
+        return "fizzbuzz"
+    elif fizz:
+        return "fizz"
+    elif buzz:
+        return "buzz"
+    else:
+        return "null"
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -79,7 +94,14 @@ def two(arg1):
 	# How do we ignore case in a String? help(str) may offer some insight.
 
 def three(input):
-    return 0
+    a = list(input)
+    vowels = ['a','e','i','o','u']
+    count = 0
+    for letter in a:
+        for vowel in vowels:
+            if vowel.lower() == letter.lower():
+                count += 1
+    return count
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -122,7 +144,15 @@ def four(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def five(input):
-	return 1
+    count = 1
+    sum = 1
+    if input != 1: 
+        while count <= input:
+            sum *= count
+            count += 1
+    else:
+        sum = 1
+    return sum
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
